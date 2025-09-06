@@ -3,33 +3,43 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=  , initial-scale=1.0">
+    <meta name="viewport" content="width=device-width  , initial-scale=1.0">
     <title>MyToDoList</title>
 
     <!link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="flex items-center justify-center min-h-screen">
-    <div>
+<body class="flex items-center justify-center min-h-screen bg-gray-500">
+    <div class="border rounded-4xl p-6 bg-gray-600">
     <header>
-        <h1 class="text-2xl font-bold mb-3 ">My To Do List</h1>
+        <h1 class="text-2xl font-bold mb-3 text-center text-white">My To Do List</h1>
     </header>
     
     <main>
         <section class="input-section">
             <form>
-            <input type="text" class="border rounded-full m-1 p-1 mb-3 pl-2 pr-2 " id="task-input" placeholder="Add a new task...">
-            <input type="date" class="border rounded-full m-1 p-1 mb-3 pl-2 pr-2 " id="task-date">
-            <button class="border rounded-full m-1 p-1 mb-3 bg-red-900 text-white pl-2 pr-2 " id=add-task-btn">Add Task</button>
+            <input type="text" class="border- rounded-full m-1 p-1 mb-3 pl-2 pr-2 bg-white " id="task-input" placeholder="Add a new task...">
+            <input type="date" class="border- rounded-full m-1 p-1 mb-3 pl-2 pr-2 bg-white " id="task-date">
+            <button type="button" onclick="validateInput()" class="border- rounded-full m-1 p-1 mb-3 bg-red-900 text-white pl-2 pr-2 " id="add-task-btn">Add Task</button>
             </form>
         </section>
 
-        <section class="FilterDelete">
-            <button class="border rounded-full m-1 p-1 mb-3 pl-2 pr-2 bg-red-900 text-white " id="filter">Filter</button>
-            <button class="border rounded-full m-1 p-1 mb-3 pl-2 pr-2 bg-red-900 text-white " id="delete">Delete</button>
-    </main>
+       <section class="FilterDelete">
+            <button class="border- rounded-full m-1 p-1 mb-3 bg-red-900 text-white pl-2 pr-2 " id="filterBtn" onclick="toggleFilter()">Filter</button>
+            <input type="date" id="filter-date" class="border- rounded-full m-1 p-1 mb-3 bg-red-900 text-white pl-2 pr-2 ">  
+            <button class="border- rounded-full m-1 p-1 mb-3 bg-red-900 text-white pl-2 pr-2 " id="delete" onclick="deleteTasks()">Delete</button>
+</section>
+        <section id="task-section">
+            <h2 class="text-2xl font-bold mb-3 text-center text-white">List of Todo</h2>
+            <ul class="text-center text-white" id="task-list">
+                <p class="text-white">No tasks added yet.</p>
+            </ul>
     
-    <footer>
+    
+    
+        </main>
+    
+    <footer class="text-center mt-4 text-white">
         <p>Created by Andika Rasul</p>    
     </footer>
     </div>
